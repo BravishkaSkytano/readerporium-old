@@ -1,0 +1,57 @@
+---
+layout: "base.html"
+title: "Home"
+---
+<div x-data="{ tab: 'all' }" id="tab_wrapper" class="border-2 border-purple-900">
+  <nav class="flex items-center justify-center border-b-2 border-purple-900">
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'all' }"
+      @click.prevent="tab = 'all'"
+    >
+      All
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'science-fiction' }"
+      @click.prevent="tab = 'science-fiction'"
+    >
+      Science Fiction
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'fantasy' }"
+      @click.prevent="tab = 'fantasy'"
+    >
+      Fantasy
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'romance' }"
+      @click.prevent="tab = 'romance'"
+    >
+      Romance
+    </div>
+  </nav>
+
+  <div class="books" x-show="tab === 'all'">
+    {% for book in books %}
+    {% include 'books.html' %}
+    {% endfor %}
+  </div>
+  <div class="books" x-show="tab === 'science-fiction'">
+    {% for book in books %}{% if 'Science Fiction' in book.tags %}
+    {% include 'books.html' %}
+    {% endif %}{% endfor %}
+  </div>
+  <div class="books" x-show="tab === 'fantasy'">
+    {% for book in books %}{% if 'Fantasy' in book.tags %}
+    {% include 'books.html' %}
+    {% endif %}{% endfor %}
+  </div>
+  <div class="books" x-show="tab === 'romance'">
+    {% for book in books %}{% if 'Romance' in book.tags %}
+    {% include 'books.html' %}
+    {% endif %}{% endfor %}
+  </div>
+</div>

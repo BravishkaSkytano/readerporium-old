@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Placeholder Title",
+    "author": "Placeholder Author",
+    "series": "Placeholder Series",
+    "order": "1",
+    "tags": [
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "Placeholder Title",
+    "author": "Placeholder Author",
+    "description": "Lorem ipsum doler coomplex",
+    "tags": [
+      "Fantasy"
+    ]
+  },
+  {
+    "title": "Placeholder Title",
+    "author": "Placeholder Author",
+    "tags": [
+      "Romance"
+    ]
+  }
+]

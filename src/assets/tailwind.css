@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply transition-colors duration-700 text-purple-900 hover:text-purple-600
+}
+.tab {
+  @apply py-2 px-4 rounded-t-lg bg-gray-900 text-purple-900;
+}
+.tab.active {
+  @apply bg-purple-600 text-gray-900;
+}
+.books {
+  @apply grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 p-2;
+}
+.series {
+  @apply grid sm:grid-cols-3 px-2 py-8;
+}
+.cover {
+  @apply max-h-80 w-auto mx-auto rounded-sm;
+}
+.button {
+  @apply p-2 px-5 transition-colors duration-700 transform bg-purple-600 hover:bg-purple-900 rounded-lg;
+}
