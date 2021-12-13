@@ -1,0 +1,45 @@
+---
+layout: base.html
+title: 'Books by Sarah J. Maas'
+---
+<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'all' }" id="tab_wrapper" class="border-2 border-purple-900">
+  <nav class="flex items-center justify-center border-b-2 border-purple-900">
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'standalone' }"
+      @click.prevent="tab = 'standalone'"
+    >
+      Standalone
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'a-court-of-thorns-and-roses' }"
+      @click.prevent="tab = 'a-court-of-thorns-and-roses'; window.location.hash = 'a-court-of-thorns-and-roses'"
+    >
+      A Court of Thorns and Roses
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'throne-of-glass' }"
+      @click.prevent="tab = 'throne-of-glass'; window.location.hash = 'throne-of-glass'"
+    >
+      Throne of Glass
+    </div>
+  </nav>
+
+  <div class="divide-y-2 divide-purple-900" x-show="tab === 'standalone'">
+    {% for book in books %}{% if 'Sarah J. Maas' == book.author %}{% if 'Standalone' == book.series %}
+    {% include 'series.html' %}
+    {% endif %}{% endif %}{% endfor %}
+  </div>
+  <div id="a-court-of-thorns-and-roses" class="divide-y-2 divide-purple-900" x-show="tab === 'a-court-of-thorns-and-roses'">
+    {% for book in books %}{% if 'A Court of Thorns and Roses' == book.series %}
+    {% include 'series.html' %}
+    {% endif %}{% endfor %}
+  </div>
+  <div id="throne-of-glass" class="divide-y-2 divide-purple-900" x-show="tab === 'throne-of-glass'">
+    {% for book in books %}{% if 'Throne of Glass' == book.series %}
+    {% include 'series.html' %}
+    {% endif %}{% endfor %}
+  </div>
+</div>
