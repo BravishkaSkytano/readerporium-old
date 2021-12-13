@@ -6,7 +6,7 @@ title: All Authors
   <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2">
     {% for author in authors %}
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/{{ author | slugify }}" class="text-2xl font-semibold">
+      <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
         {{ author }}
       </a>
     </div>

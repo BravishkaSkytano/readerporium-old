@@ -19,10 +19,16 @@
       {{ book.series }} #{{ book.order }}
     </p>{% endif %}~
     <p>
-      {{ book.tags | join(", ") }}
+      ISBN: {{ book.isbn if book.isbn else 'null' }}
+    </p>
+    <p>
+      {{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
     </p>~
     <p>
-      {% if book.description %}{{ book.description | safe }}{% else %}No description available{% endif %}
-    </p>
+      {{ book.tags | join(", ") }}
+    </p>~
+    <div class="description">
+      {% if book.description %}{{ book.description | safe }}{% else %}<p class="text-center">No description available</p>{% endif %}
+    </div>
   </div>
 </div>

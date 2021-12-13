@@ -2,56 +2,37 @@
 layout: "base.html"
 title: "Home"
 ---
-<div x-data="{ tab: 'all' }" id="tab_wrapper" class="border-2 border-purple-900">
-  <nav class="flex items-center justify-center border-b-2 border-purple-900">
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'all' }"
-      @click.prevent="tab = 'all'"
-    >
-      All
+<div class="border-2 border-purple-900">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 p-2">
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/authors" class="text-2xl font-semibold">
+        All Authors
+      </a>
     </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'science-fiction' }"
-      @click.prevent="tab = 'science-fiction'"
-    >
-      Science Fiction
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/children" class="text-2xl font-semibold">
+        Children
+      </a>
     </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'fantasy' }"
-      @click.prevent="tab = 'fantasy'"
-    >
-      Fantasy
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/young-adult" class="text-2xl font-semibold">
+        Young Adult
+      </a>
     </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'romance' }"
-      @click.prevent="tab = 'romance'"
-    >
-      Romance
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/new-adult" class="text-2xl font-semibold">
+        New Adult
+      </a>
     </div>
-  </nav>
-
-  <div class="books" x-show="tab === 'all'">
-    {% for book in books %}
-    {% include 'books.html' %}
-    {% endfor %}
-  </div>
-  <div class="books" x-show="tab === 'science-fiction'">
-    {% for book in books %}{% if 'Science Fiction' in book.tags %}
-    {% include 'books.html' %}
-    {% endif %}{% endfor %}
-  </div>
-  <div class="books" x-show="tab === 'fantasy'">
-    {% for book in books %}{% if 'Fantasy' in book.tags %}
-    {% include 'books.html' %}
-    {% endif %}{% endfor %}
-  </div>
-  <div class="books" x-show="tab === 'romance'">
-    {% for book in books %}{% if 'Romance' in book.tags %}
-    {% include 'books.html' %}
-    {% endif %}{% endfor %}
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/adult" class="text-2xl font-semibold">
+        Adult
+      </a>
+    </div>
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/nonfiction" class="text-2xl font-semibold">
+        Nonfiction
+      </a>
+    </div>
   </div>
 </div>
