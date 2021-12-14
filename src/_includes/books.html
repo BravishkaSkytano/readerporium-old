@@ -1,6 +1,6 @@
 <div class="border-2 border-purple-900 px-3 py-10 text-center">
   <img
-    src="{% if book.cover %}/assets/covers/{% if book.series %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
+    src="{% if book.cover %}/assets/covers/{% if book.series != 'Standalone' %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
     alt="cover"
     class="cover"
     loading="lazy"
@@ -11,9 +11,9 @@
   <p>
     <a href="/authors/{{ book.author | slugify }}/">{{ book.author }}</a>
   </p>
-  {% if book.series %}<p>
-    <a href="/authors/{{ book.author | slugify }}/#{{ book.series | slugify }}">{{ book.series }} #{{ book.order }}</a>
-  </p>{% endif %}~
+  <p>
+    <a href="/authors/{{ book.author | slugify }}/#{{ book.series | slugify }}">{{ book.series }}{% if book.order %} #{{ book.order }}{% endif %}</a>
+  </p>~
   <p>
     ISBN: {{ book.isbn if book.isbn else 'null' }}
   </p>
@@ -21,12 +21,15 @@
     {{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
   </p>~
   <p>
+    {{ book.pace }}
+  </p>
+  <p>
     {{ book.tags | join(", ") }}
   </p>~
   <div class="description">
     {% if book.description %}{{ book.description | safe | truncate(260) }}{% else %}<span class="text-center">No description available</span>{% endif %}
   </div>~
   <p class="mt-2">
-    <a href="/authors/{{ book.author | slugify }}/#{% if book.series %}{{ book.series | slugify }}{% else %}{{ book.title | slugify }}{% endif %}" class="button">View</a>
+    <a href="/authors/{{ book.author | slugify }}/#{% if book.series != 'Standalone' %}{{ book.series | slugify }}{% else %}{{ book.title | slugify }}{% endif %}" class="button">View</a>
   </p>
 </div>

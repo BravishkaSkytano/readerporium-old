@@ -1,7 +1,7 @@
 <div class="series">
   <div class="m-auto">
     <img
-      src="{% if book.cover %}/assets/covers/{% if book.series %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
+      src="{% if book.cover %}/assets/covers/{% if book.series != 'Standalone' %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
       alt="cover"
       class="cover"
       loading="lazy"
@@ -15,15 +15,21 @@
     <p>
       {{ book.author }}
     </p>
-    {% if book.series %}<p>
-      {{ book.series }} #{{ book.order }}
-    </p>{% endif %}~
+    <p>
+      {{ book.series }}{% if book.order %} #{{ book.order }}{% endif %}
+    </p>~
     <p>
       ISBN: {{ book.isbn if book.isbn else 'null' }}
     </p>
     <p>
-      {{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
+      &copy;{{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
     </p>~
+    <p>
+      {{ book.pace }}
+    </p>
+    <p>
+      {{ book.genre | join(", ") }}
+    </p>
     <p>
       {{ book.tags | join(", ") }}
     </p>~
