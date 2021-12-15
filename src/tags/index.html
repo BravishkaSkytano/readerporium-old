@@ -1,53 +1,43 @@
 ---
-layout: "base.html"
-title: "Young Adult Library"
+layout: base.html
+title: All Tags
 ---
-<h2>Filter by Tags</h2>
 <div class="border-2 border-purple-900">
   <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 p-2">
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/slow-paced/#young-adult" class="text-xl font-medium">
+      <a href="slow-paced" class="text-xl font-medium">
         Slow-Paced
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/medium-paced/#young-adult" class="text-xl font-medium">
+      <a href="medium-paced" class="text-xl font-medium">
         Medium-Pace
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/fast-paced/#young-adult" class="text-xl font-medium">
+      <a href="fast-paced" class="text-xl font-medium">
         Fast-Paced
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/adventure/#young-adult" class="text-xl font-medium">
+      <a href="adventure" class="text-xl font-medium">
         Adventure
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/fantasy/#young-adult" class="text-xl font-medium">
+      <a href="fantasy" class="text-xl font-medium">
         Fantasy
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/mystery/#young-adult" class="text-xl font-medium">
+      <a href="mystery" class="text-xl font-medium">
         Mystery
       </a>
     </div>
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/romance/#young-adult" class="text-xl font-medium">
+      <a href="romance" class="text-xl font-medium">
         Romance
       </a>
     </div>
-  </div>
-</div>
-
-<h2>All Books</h2>
-<div class="border-2 border-purple-900">
-  <div class="books">
-    {% for book in books.ya | reverse %}
-    {% include 'books.html' %}
-    {% endfor %}
   </div>
 </div>

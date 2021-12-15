@@ -35,22 +35,22 @@ title: "Tagged 'Medium-Paced'"
   </nav>
   
   <div class="books" x-show="tab === 'children'">
-    {% for book in books.children | reverse %}{% if 'medium-paced' in book.tags %}
+    {% for book in books.children | reverse %}{% if book.pace == 'medium-paced' %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'young-adult'">
-    {% for book in books.ya | reverse %}{% if 'medium-paced' in book.tags %}
+    {% for book in books.ya | reverse %}{% if book.pace == 'medium-paced' %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'new-adult'">
-    {% for book in books.na | reverse %}{% if 'medium-paced' in book.tags %}
+    {% for book in books.na | reverse %}{% if book.pace == 'medium-paced' %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'adult'">
-    {% for book in books.adult | reverse %}{% if 'medium-paced' in book.tags %}
+    {% for book in books.adult | reverse %}{% if book.pace == 'medium-paced' %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
