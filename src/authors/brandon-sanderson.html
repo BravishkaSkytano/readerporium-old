@@ -2,12 +2,12 @@
 layout: base.html
 title: 'Books by Brandon Sanderson'
 ---
-<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'all' }" id="tab_wrapper" class="border-2 border-purple-900">
+<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'standalone' }" id="tab_wrapper" class="border-2 border-purple-900">
   <nav class="flex items-center justify-center border-b-2 border-purple-900">
     <div
       class="tab"
       :class="{ 'active': tab === 'standalone' }"
-      @click.prevent="tab = 'standalone'"
+      @click.prevent="tab = 'standalone'; window.location.hash = 'standalone'"
     >
       Standalone
     </div>
@@ -28,17 +28,17 @@ title: 'Books by Brandon Sanderson'
   </nav>
 
   <div class="divide-y-2 divide-purple-900" x-show="tab === 'standalone'">
-    {% for book in books %}{% if 'Brandon Sanderson' == book.author %}{% if 'Standalone' == book.series %}
+    {% for book in books.adult %}{% if ('Brandon Sanderson' == book.author) and ('Standalone' == book.series) %}
     {% include 'series.html' %}
-    {% endif %}{% endif %}{% endfor %}
+    {% endif %}{% endfor %}
   </div>
   <div id="the-mistborn-saga" class="divide-y-2 divide-purple-900" x-show="tab === 'the-mistborn-saga'">
-    {% for book in books %}{% if 'The Mistborn Saga' == book.series %}
+    {% for book in books.ya %}{% if 'The Mistborn Saga' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>
   <div id="the-stormlight-archive" class="divide-y-2 divide-purple-900" x-show="tab === 'the-stormlight-archive'">
-    {% for book in books %}{% if 'The Stormlight Archive' == book.series %}
+    {% for book in books.ya %}{% if 'The Stormlight Archive' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>

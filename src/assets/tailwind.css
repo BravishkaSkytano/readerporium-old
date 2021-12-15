@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply text-3xl font-semibold text-center mb-6;
+}
+h2 {
+  @apply text-2xl font-semibold text-center m-6;
+}
 .text-color {
   @apply font-medium text-transparent bg-clip-text bg-purple-600;
 }
@@ -28,4 +34,10 @@ a {
 }
 .button {
   @apply p-2 px-5 transition-colors duration-700 transform bg-purple-600 hover:bg-purple-900 rounded-lg;
+}
+.spoiler {
+  @apply text-color blur-sm;
+}
+.spoiler:hover { 
+  @apply blur-none;
 }
