@@ -1,19 +1,19 @@
-<div class="border-2 border-purple-900 px-3 py-10 text-center">
+<div id="{{ book.title | slugify }}" class="border-2 border-purple-900 px-3 py-10 text-center">
   <img
     src="{% if book.cover %}/assets/covers/{% if book.series != 'Standalone' %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
     alt="cover"
     class="cover"
     loading="lazy"
   >~
-  <h2 id="{{ book.title | slugify }}" class="text-2xl font-semibold">
+  <h2 class="text-2xl font-semibold">
     {{ book.title }}
   </h2>~
   <p>
     <a href="/authors/{{ book.author | slugify }}/">{{ book.author }}</a>
   </p>
-  <p>
+  {% if book.series != 'Standalone' %}<p>
     <a href="/authors/{{ book.author | slugify }}/#{{ book.series | slugify }}">{{ book.series }}{% if book.order %} #{{ book.order }}{% endif %}</a>
-  </p>~
+  </p>{% endif %}~
   <p>
     ISBN: {{ book.isbn if book.isbn else 'null' }}
   </p>

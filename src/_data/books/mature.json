@@ -37,7 +37,6 @@
     "order":1,
     "tags":["Fantasy","Romance","Adventure","paranormal","magic"],
     "pace":"fast-paced",
-    "words":40000,
     "description":"<p><strong>Once you sip the Nectar of the gods, there's no going back.</strong></p><p>Leda Pierce is working as a paranormal bounty hunter on the Frontier, the dividing line between human civilization and the plains of monsters. Life is simple and the pay modest, but at least she has her family. That is, until a vampire hunt goes wrong and her brother goes missing, captured by the dark angels of hell.</p><p>With no magical powers of her own and no way to find him, Leda's only option is to go to New York and join the Legion of Angels, an elite unit of supernatural soldiers with powers gifted to them by the gods themselves. If she can survive long enough to make it up the ranks, she will gain the magic she needs to find her brother.</p><p>But Leda soon finds herself on the wrong side of a conspiracy that will shake up the supernatural world—and at the mercy of a fiercely powerful and tempting angel.</p>"
   },
   {
@@ -118,5 +117,32 @@
     "order":9,
     "tags":["Fantasy","Romance","Adventure","paranormal","magic"],
     "description":"<p><strong>The enemy isn't a monster or a demon this time. It is fear, the destroyer of worlds.</strong></p><p>Life has never been better for Leda Pandora, the Angel of Chaos. She is married to the archangel Nero Windstriker, the love of her life. And she commands a vast territory, surrounded by her closest friends and family.</p><p>Everything is perfect—until the Earth's magic goes haywire. Now blood has become poison to vampires, witches are being killed by their own potions, and beasts can pass right through the magic barrier that separates civilization from the plains of monsters. And with each new incident, uncertainty and fear are growing stronger in both humans and supernaturals, driving them to violence.</p><p>If Leda can't find a way to stop these phenomena, it won't just be the end of all magic on Earth. It will be the end of humanity itself.</p>"
+  },
+  {
+    "cover":"angel-fire.jpg",
+    "title":"Angel Fire",
+    "author":"Ella Summers",
+    "series":"Immortal Legacy",
+    "order":1,
+    "tags":["Fantasy","Romance","paranormal","magic"],
+    "description":"<p>Cadence Lightbringer, daughter of an archangel, has trained from birth to one day drink the Nectar of the gods and ascend to the angels' ranks. She's always been the perfect soldier. She's always known exactly where her life is headed.</p><p>Until she is assigned to a mission with Damiel Dragonsire, Master Interrogator of the Legion of Angels.</p><p>Powerful, paranoid, and brutally intelligent, Damiel has built up a reputation for hunting down each and every traitor hiding within the Legion's ranks. And his latest suspect is Cadence. Convinced she is not the perfect soldier everyone believes her to be, he will stop at nothing to expose her.</p>"
+  },
+  {
+    "cover":"angel-fury.jpg",
+    "title":"Angel Fury",
+    "author":"Ella Summers",
+    "series":"Immortal Legacy",
+    "order":2,
+    "tags":["Fantasy","Romance","paranormal","magic"],
+    "description":"<p>Cadence Lightbringer, daughter of a legendary archangel, has always known her gods-endowed magic comes with a price. As an angel in the Legion of Angels, she lives where the Legion commands her to live, trains how the Legion tells her to train, and marries whom the Legion instructs her to marry.</p><p>Somehow it all sounded simpler in her head.</p><p>When Cadence is ordered to marry the enigmatic angel Damiel Dragonsire, a man she hardly knows, her whole perfect, predictable life is turned upside down. The wedding, however, is cut short by a dark threat that throws Cadence and Damiel into a world of magic as ancient and deadly as the original Immortals, powerful deities who once ruled the entire known universe.</p>"
+  },
+  {
+    "cover":"angel-fever.jpg",
+    "title":"Angel Fever",
+    "author":"Ella Summers",
+    "series":"Immortal Legacy",
+    "order":3,
+    "tags":["Fantasy","Romance","paranormal","magic"],
+    "description":"<p>Cadence Lightbringer has everything. The prestige and power that comes with being the Angel of Storm Castle. Her archangel husband and soulmate, Damiel Dragonsire, Master Interrogator in the Legion of Angels. And their son Nero, a miracle of magic, the first and only child of two angels.</p><p>But the Legion's mission to exterminate dark magic brings trouble to Cadence's door. What begins as a mission to apprehend a rogue angel escalates into a hunt for ancient relics that will turn her life upside down—and shake the very foundation of the Earth and every other world in the domains of heaven and hell.</p>"
   }
 ]

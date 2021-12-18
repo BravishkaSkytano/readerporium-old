@@ -8,6 +8,7 @@ function sortByOrder(values) {
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
   eleventyConfig.addFilter("slugify", slugify);
   eleventyConfig.addFilter("strip_html", (book) => {

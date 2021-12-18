@@ -15,9 +15,9 @@
     <p>
       {{ book.author }}
     </p>
-    <p>
+    {% if book.series != 'Standalone' %}<p>
       {{ book.series }}{% if book.order %} #{{ book.order }}{% endif %}
-    </p>~
+    </p>{% endif %}~
     <p>
       ISBN: {{ book.isbn if book.isbn else 'null' }}
     </p>
