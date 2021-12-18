@@ -1,6 +1,6 @@
 <header x-data="{ isOpen: false }" class="flex justify-between p-4 bg-gray-900 lg:p-8 mb-10">
   <div class="flex items-center">
-    <h3 class="text-2xl font-bold text-color">Readerporium</h3>
+    <a href="/" class="text-2xl font-bold text-color">Readerporium</a>
   </div>
 
   <!-- left header section -->
@@ -12,7 +12,6 @@
       </svg>
     </button>
     <div class="hidden space-x-6 text-color lg:inline-block">
-      <a href="/authors/" class="text-base">All Authors</a>
       <a href="/tags/" class="text-base">All Tags</a>
       <a href="/childrens/" class="text-base">Childrens</a>
       <a href="/young-adult/" class="text-base">Young Adult</a>
@@ -27,7 +26,6 @@
       <div class="fixed left-0 w-full h-auto p-5 bg-purple-600 rounded-lg shadow-xl top-16" x-show="isOpen"
         @click.away=" isOpen = false">
         <div class="flex flex-col space-y-6">
-          <a href="/authors/" class="text-sm text-gray-900">All Authors</a>
           <a href="/tags/" class="text-sm text-gray-900">All Tags</a>
           <a href="/childrens/" class="text-sm text-gray-900">Childrens</a>
           <a href="/young-adult/" class="text-sm text-gray-900">Young Adult</a>

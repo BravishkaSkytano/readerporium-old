@@ -33,12 +33,12 @@ title: 'Books by Brandon Sanderson'
     {% endif %}{% endfor %}
   </div>
   <div id="the-mistborn-saga" class="divide-y-2 divide-purple-900" x-show="tab === 'the-mistborn-saga'">
-    {% for book in books.ya %}{% if 'The Mistborn Saga' == book.series %}
+    {% for book in books.ya | sortByOrder %}{% if 'The Mistborn Saga' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>
   <div id="the-stormlight-archive" class="divide-y-2 divide-purple-900" x-show="tab === 'the-stormlight-archive'">
-    {% for book in books.ya %}{% if 'The Stormlight Archive' == book.series %}
+    {% for book in books.adult | sortByOrder %}{% if 'The Stormlight Archive' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>

@@ -26,12 +26,13 @@
     </p>~
     <p>
       <a href="/tags/{{ book.pace }}/">{{ book.pace }}</a>
+      {% if book.words %} / {{ book.words }} words {{ '(novella)' if (book.words < 50000) }}{% endif %}
     </p>
     <p>
-      {% for genre in book.genre %}<a href="/{{ genre | slugify }}/">{{ genre }}</a>,{% endfor %}
+      {% set comma = joiner() %}{% for genre in book.genre -%}<a href="/{{ genre | slugify }}/">{{ comma() }} {{ genre }}</a>{% endfor %}
     </p>
     <p>
-      {% for tag in book.tags %}<a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>,{% endfor %}
+      {% set comma = joiner() %}{% for tag in book.tags -%}<a href="/tags/{{ tag | slugify }}/">{{ comma() }} {{ tag }}</a>{% endfor %}
     </p>~
     <div class="description">
       {% if book.description %}{{ book.description | safe }}{% else %}<p class="text-center">No description available</p>{% endif %}

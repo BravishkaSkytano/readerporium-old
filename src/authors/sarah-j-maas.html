@@ -33,12 +33,12 @@ title: 'Books by Sarah J. Maas'
     {% endif %}{% endfor %}
   </div>
   <div id="a-court-of-thorns-and-roses" class="divide-y-2 divide-purple-900" x-show="tab === 'a-court-of-thorns-and-roses'">
-    {% for book in (books.ya) or (books.na) %}{% if 'A Court of Thorns and Roses' == book.series %}
+    {% for book in (books.ya) or (books.na) | sortByOrder %}{% if 'A Court of Thorns and Roses' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>
   <div id="throne-of-glass" class="divide-y-2 divide-purple-900" x-show="tab === 'throne-of-glass'">
-    {% for book in (books.ya) or (books.na) %}{% if 'Throne of Glass' == book.series %}
+    {% for book in (books.ya) or (books.na) | sortByOrder %}{% if 'Throne of Glass' == book.series %}
     {% include 'series.html' %}
     {% endif %}{% endfor %}
   </div>

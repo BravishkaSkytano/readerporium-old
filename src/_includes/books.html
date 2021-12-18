@@ -20,11 +20,13 @@
   <p>
     {{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
   </p>~
+  
   <p>
     <a href="/tags/{{ book.pace }}/">{{ book.pace }}</a>
+    {% if book.words %} / {{ book.words }} words {{ '(novella)' if (book.words < 50000) }}{% endif %}
   </p>
   <p>
-    {% for tag in book.tags %}<a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>,{% endfor %}
+    {% set comma = joiner() %}{% for tag in book.tags -%}<a href="/tags/{{ tag | slugify }}/">{{ comma() }} {{ tag }}</a>{% endfor %}
   </p>~
   <div class="description">
     {% if book.description %}{% if book.order > 1 %}

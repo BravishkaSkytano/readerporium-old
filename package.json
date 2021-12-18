@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy && npx tailwindcss -i ./src/assets/tailwind.css -o ./dist/assets/tailwind.css",
-    "start": "npx @11ty/eleventy --serve & npx tailwindcss -i ./src/assets/tailwind.css -o ./dist/assets/tailwind.css --watch"
+    "build": "npx @11ty/eleventy && npx tailwindcss -i ./src/tailwind.css -o ./dist/assets/tailwind.css && npx pagecrypt ./dist/mature/index.html ./dist/mature/index.html maturity_is_overrated",
+    "start": "npx @11ty/eleventy --serve & npx tailwindcss -i ./src/tailwind.css -o ./dist/assets/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
     "autoprefixer": "^10.4.0",
     "postcss-cli": "^9.1.0",
     "tailwindcss": "^3.0.1"
+  },
+  "devDependencies": {
+    "pagecrypt": "^5.3.0"
   }
 }
