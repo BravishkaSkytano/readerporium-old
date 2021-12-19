@@ -32,6 +32,13 @@ title: "Tagged 'Medium-Paced'"
     >
       Adult
     </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'nonfiction' }"
+      @click.prevent="tab = 'nonfiction'; window.location.hash = 'nonfiction'"
+    >
+      Nonfiction
+    </div>
   </nav>
   
   <div class="books" x-show="tab === 'children'">
@@ -51,6 +58,11 @@ title: "Tagged 'Medium-Paced'"
   </div>
   <div class="books" x-show="tab === 'adult'">
     {% for book in books.adult | reverse %}{% if book.pace == 'medium-paced' %}
+    {% include 'books.html' %}
+    {% endif %}{% endfor %}
+  </div>
+  <div class="books" x-show="tab === 'nonfiction'">
+    {% for book in books.nonfiction | reverse %}{% if book.pace == 'medium-paced' %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>

@@ -1,6 +1,6 @@
 ---
 layout: base.html
-title: "Tagged 'Slow-Paced'"
+title: "Tagged 'challenging'"
 ---
 <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'children' }" id="tab_wrapper" class="border-2 border-purple-900">
   <nav class="flex items-center justify-center border-b-2 border-purple-900">
@@ -42,27 +42,27 @@ title: "Tagged 'Slow-Paced'"
   </nav>
   
   <div class="books" x-show="tab === 'children'">
-    {% for book in books.children | reverse %}{% if book.pace == 'slow-paced' %}
+    {% for book in books.children | reverse %}{% if 'challenging' in book.tags %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'young-adult'">
-    {% for book in books.ya | reverse %}{% if book.pace == 'slow-paced' %}
+    {% for book in books.ya | reverse %}{% if 'challenging' in book.tags %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'new-adult'">
-    {% for book in books.na | reverse %}{% if book.pace == 'slow-paced' %}
+    {% for book in books.na | reverse %}{% if 'challenging' in book.tags %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'adult'">
-    {% for book in books.adult | reverse %}{% if book.pace == 'slow-paced' %}
+    {% for book in books.adult | reverse %}{% if 'challenging' in book.tags %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
   <div class="books" x-show="tab === 'nonfiction'">
-    {% for book in books.nonfiction | reverse %}{% if book.pace == 'slow-paced' %}
+    {% for book in books.nonfiction | reverse %}{% if 'challenging' in book.tags %}
     {% include 'books.html' %}
     {% endif %}{% endfor %}
   </div>
