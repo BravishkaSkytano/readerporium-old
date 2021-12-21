@@ -22,11 +22,10 @@
       ISBN: {{ book.isbn if book.isbn else 'null' }}
     </p>
     <p>
-      &copy;{{ book.year if book.year else 'Publish date unavailable /' }} {{ book.publisher if book.publisher else 'Publisher unavailable' }}
+      &copy;{{ book.year if book.year else 'Publish date unavailable' }} / {{ book.publisher if book.publisher else 'Publisher unavailable' }}
     </p>~
     <p>
-      <a href="/tags/{{ book.pace }}/">{{ book.pace }}</a>
-      {% if book.words %} / {{ book.words }} words {{ '(novella)' if (book.words < 50000) }}{% endif %}
+      <a href="/tags/{{ book.pace }}/">{{ book.pace }}</a> / {% if book.words %}{{ book.words }} words ({{ 'flash fiction' if (book.words < 3500) }}{{ 'short story' if (book.words > 3500) and (book.words < 7500) }}{{ 'novellette' if (book.words > 7500) and (book.words < 17000) }}{{ 'novella' if (book.words > 17000) and (book.words < 40000) }}{{ 'novel' if book.words > 40000 }}){% else %}Unknown wordcount{% endif %}
     </p>
     <p>
       {% set comma = joiner() %}{% for genre in book.genre -%}<a href="/{{ genre | slugify }}/">{{ comma() }} {{ genre }}</a>{% endfor %}
