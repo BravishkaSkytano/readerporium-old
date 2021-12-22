@@ -1,5 +1,5 @@
 <div class="series">
-  <div class="m-auto">
+  <div class="mt-8">
     <img
       src="{% if book.cover %}/assets/covers/{% if book.series != 'Standalone' %}{{ book.series | slugify }}/{% endif %}{{ book.cover }}{% else %}https://via.placeholder.com/220x320?text=No+cover+available{% endif %}"
       alt="cover"
@@ -33,7 +33,7 @@
     <p>
       {% set comma = joiner() %}{% for tag in book.tags -%}<a href="/tags/{{ tag | slugify }}/">{{ comma() }} {{ tag }}</a>{% endfor %}
     </p>~
-    <div class="description">
+    <div class="description text-left">
       {% if book.description %}{{ book.description | safe }}{% else %}<p class="text-center">No description available</p>{% endif %}
     </div>
   </div>

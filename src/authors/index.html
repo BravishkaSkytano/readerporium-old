@@ -2,9 +2,46 @@
 layout: base.html
 title: All Authors
 ---
-<div class="border-2 border-purple-900">
-  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2">
-    {% for author in authors %}
+<div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'childrens' }" id="tab_wrapper" class="border-2 border-purple-900">
+  <nav class="flex items-center justify-center border-b-2 border-purple-900">
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'childrens' }"
+      @click.prevent="tab = 'childrens'; window.location.hash = 'childrens'"
+    >
+      Children's
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'young-adult' }"
+      @click.prevent="tab = 'young-adult'; window.location.hash = 'young-adult'"
+    >
+      Young Adult
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'new-adult' }"
+      @click.prevent="tab = 'new-adult'; window.location.hash = 'new-adult'"
+    >
+      New Adult
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'adult' }"
+      @click.prevent="tab = 'adult'; window.location.hash = 'adult'"
+    >
+      Adult
+    </div>
+    <div
+      class="tab"
+      :class="{ 'active': tab === 'mature' }"
+      @click.prevent="tab = 'mature'; window.location.hash = 'mature'"
+    >
+    </div>
+  </nav>
+
+  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2" x-show="tab === 'children'">
+    {% for author in authors.childrens %}
     <div class="border-2 border-purple-900 px-2 py-10 text-center">
       <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
         {{ author }}
@@ -12,4 +49,45 @@ title: All Authors
     </div>
     {% endfor %}
   </div>
+
+  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2" x-show="tab === 'young-adult'">
+    {% for author in authors.ya %}
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
+        {{ author }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2" x-show="tab === 'new-adult'">
+    {% for author in authors.na %}
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
+        {{ author }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2" x-show="tab === 'adult'">
+    {% for author in authors.adult %}
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
+        {{ author }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="grid sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 p-2" x-show="tab === 'mature'">
+    {% for author in authors.mature %}
+    <div class="border-2 border-purple-900 px-2 py-10 text-center">
+      <a href="/authors/{{ author | slugify }}" class="text-2xl font-semibold">
+        {{ author }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
 </div>
