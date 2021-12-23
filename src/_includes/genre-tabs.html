@@ -1,0 +1,37 @@
+<nav class="flex items-center justify-center border-b-2 border-purple-900">
+  <div
+    class="tab"
+    :class="{ 'active': tab === 'children' }"
+    @click.prevent="tab = 'children'; window.location.hash = 'children'"
+  >
+    Children
+  </div>
+  <div
+    class="tab"
+    :class="{ 'active': tab === 'young-adult' }"
+    @click.prevent="tab = 'young-adult'; window.location.hash = 'young-adult'"
+  >
+    YA
+  </div>
+  <div
+    class="tab"
+    :class="{ 'active': tab === 'new-adult' }"
+    @click.prevent="tab = 'new-adult'; window.location.hash = 'new-adult'"
+  >
+    NA
+  </div>
+  <div
+    class="tab"
+    :class="{ 'active': tab === 'adult' }"
+    @click.prevent="tab = 'adult'; window.location.hash = 'adult'"
+  >
+    Adult
+  </div>
+  <div
+    class="tab"
+    :class="{ 'active': tab === 'nonfiction' }"
+    @click.prevent="tab = 'nonfiction'; window.location.hash = 'nonfiction'"
+  >
+    Nonfiction
+  </div>
+</nav>

@@ -3,36 +3,8 @@ layout: base.html
 title: "Tagged 'paranormal'"
 ---
 <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'children' }" id="tab_wrapper" class="border-2 border-purple-900">
-  <nav class="flex items-center justify-center border-b-2 border-purple-900">
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'children' }"
-      @click.prevent="tab = 'children'; window.location.hash = 'children'"
-    >
-      Children
-    </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'young-adult' }"
-      @click.prevent="tab = 'young-adult'; window.location.hash = 'young-adult'"
-    >
-      Young Adult
-    </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'new-adult' }"
-      @click.prevent="tab = 'new-adult'; window.location.hash = 'new-adult'"
-    >
-      New Adult
-    </div>
-    <div
-      class="tab"
-      :class="{ 'active': tab === 'adult' }"
-      @click.prevent="tab = 'adult'; window.location.hash = 'adult'"
-    >
-      Adult
-    </div>
-  </nav>
+
+  {% include 'genre-tabs.html' %}
   
   <div class="books" x-show="tab === 'children'">
     {% for book in books.children | reverse %}{% if 'paranormal' in book.tags %}

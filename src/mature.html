@@ -2,48 +2,6 @@
 layout: "base.html"
 title: "Mature Library"
 ---
-<h2>Filter by Tags</h2>
-<div class="border-2 border-purple-900">
-  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6 p-2">
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/slow-paced/#mature" class="text-xl font-medium">
-        Slow-Paced
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/medium-paced/#mature" class="text-xl font-medium">
-        Medium-Pace
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/fast-paced/#mature" class="text-xl font-medium">
-        Fast-Paced
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/adventure/#mature" class="text-xl font-medium">
-        Adventure
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/fantasy/#mature" class="text-xl font-medium">
-        Fantasy
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/mystery/#mature" class="text-xl font-medium">
-        Mystery
-      </a>
-    </div>
-    <div class="border-2 border-purple-900 px-2 py-10 text-center">
-      <a href="/tags/romance/#mature" class="text-xl font-medium">
-        Romance
-      </a>
-    </div>
-  </div>
-</div>
-
-<h2>All Books</h2>
 <div class="border-2 border-purple-900">
   <div class="books">
     {% for book in books.mature | reverse %}
