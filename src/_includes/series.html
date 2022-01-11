@@ -35,6 +35,9 @@
     </p>~
     <div class="description text-left">
       {% if book.description %}{{ book.description | safe }}{% else %}<p class="text-center">No description available</p>{% endif %}
-    </div>
+    </div>~
+    <p class="mt-2">
+      <a href="/downloads/#{{ book.author | slugify }}" class="button">Download</a>
+    </p>
   </div>
 </div>
