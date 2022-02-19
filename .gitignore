@@ -1,2 +1,28 @@
-node_modules
-dist
+# Do not upload the real config file:
+libray/config.php
+
+# Ignore (temporary) backup files:
+*[0-9][0-9]
+*.bak
+*.ph
+
+# Ignore database files:
+db
+*.db
+
+# Ignore logs:
+*.log
+*.log.*
+
+# Ignore all scan files but the two examples:
+scan_[A-z][A-z].php
+!scan_de.php
+!scan_en.php
+
+# Ignore local additions:
+libray/books
+libray/gutenwork
+libray/sync
+libray/lib/Michelf
+libray/covers
+libray/lib/asap_genres.json

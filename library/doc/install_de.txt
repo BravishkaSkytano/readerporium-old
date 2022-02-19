@@ -1,0 +1,95 @@
+$Id$
+============
+INSTALLATION
+============
+
+Schnellstart
+------------
+
+Hier wird ein Schnellstart mit einfacher Konfiguration beschrieben. Wer etwas
+komplexeres benoetigt, und z.B. verschiedene Sprachen mit eigenen Katalogen
+verwenden moechte, findet weiter unten die entsprechenden Informationen.
+
+1) Archiv entpacken. Inhalt des Verzeichnisses in den Ordner "opds"
+   direkt im DOCUMENT_ROOT des Webservers kopieren
+2) config.simple.php nach config.php umbenennen und im Editor anpassen:
+   - Erster Block (Directories) kann unveraendert bleiben
+   - Zweiten Block (Book Covers) ebenfalls belassen
+   - im dritten Block (Web Service) "localhost" durch den
+     Namen/die IP des Rechners ersetzen (sonst funktioniert das Ganze
+     am Ende nur auf dem lokalen Rechner, nicht aber vom eBook-Reader aus)
+   - im vierten Block (Person Info) die Daten anpassen.
+3) Datenbank vorbereiten:
+   - in den Ordner "install" wechseln
+   - Linux: install.sh ausfuehren
+     Windows: alle *.sql Dateien mit sqlite3 ausfuehren (?)
+   - Datei metadata.db in das uebergeordnete Verzeichnis verschieben
+4) Verzeichnisstruktur fuer Buecher vorbereiten:
+   - in den Ordner "books" wechseln
+   - fuer jede gewuenschte Sprache das entsprechende Verzeichnis
+     anlegen (z.B. "de" fuer Deutsch, "en" fuer Englisch...).
+     Nur fuer die benoetigten Sprachen.
+   - in jedem Sprachordner wiederum Ordner fuer die gewuenschten
+     Genres anlegen (z.B. "Computer", "Science Fiction", ...)
+   - in den Genre-Ordnern Verzeichnisse mit den Namen der Autoren
+     anlegen (z.B. "Jules Verne", "Paul Scheerbart", ...)
+   - die Buecher als <Titel>.<Typ> in die Autoren-Ordner kopieren
+   Eine Beispiel-Datei zur Veranschaulichung:
+   books/de/Science Fiction/Jules Verne/Reise um den Mond.epub
+   books/de/Science Fiction/Jules Verne/Reise um den Mond.mobi
+   Zu jedem Buch (das durchaus in mehreren Formaten vorliegen kann) kann
+   auch eine Textdatei mit einer Beschreibung angelegt werden, z.B.:
+   books/de/Science Fiction/Jules Verne/Reise um den Mond.desc
+   Diese muss dann die Erweiterung ".desc" haben - wie ersichtlich.
+5) Datenbank fuettern (ACHTUNG - NICHT MIT CALIBRE DB!):
+   - wieder ins Hauptverzeichnis (opds) wechseln
+   - folgenden Befehl ausfuehren:
+     php scan.php
+
+Wenn alles geklappt hat, sollte man jetzt den Katalog benutzen koennen.
+Als URL im Browser/eBook-Reader einfach die konfigurierte $baseurl plus
+"/index.php" angeben - also z.B.
+http://meine_kiste/opds/index.php
+
+
+Erweiterte Konfiguration
+------------------------
+
+Mit einer erweiterten Konfiguration lassen sich sprachspezifische Kataloge
+verwenden. Im Prinzip ist hier nach obigem Schema zu verfahren - nur der zweite
+Schritt wird leicht angepasst:
+
+Statt config.simple.php verwenden wir hier config.advanced.php als Vorlage - die
+Anpassung erfolgt, wie oben beschrieben. Sprach-spezifische Anpassungen erfolgen
+nun im Block "Language dependent stuff", und überschreiben jeweils die zuvor
+gesetzten Werte. Die Beispiel-Konfiguration gibt sinnvolle Werte für Deutsch
+und Englisch bereits an - mit Deutsch als der Default-Sprache, falls (z.B. in
+der URL) keine andere Sprache angegeben wurde. Natuerlich lassen sich hier noch
+weitere Einstellungen anpassen - etwa der Site-Title.
+
+Schritt 3 muss nun natuerlich fuer jede zusaetzliche Datenbank angepasst werden.
+Dabei kann die einmal erstellte (leere) Datenbank einfach kopiert werden.
+
+Auch Schritt 5 aendert sich geringfuegig - als Beispiele liegen scan_de.php
+sowie scan_en.php mit bei.
+
+Wird nun die URL wie oben angegeben aufgerufen, greift die Default-Sprache (in
+unserem Falle also Deutsch). Besser ist es allemal, generell die Sprache mit
+anzugeben. Die URL waere dann z.B. fuer Englisch
+http://meine_kiste/opds/index.php?lang=en
+
+
+Calibre-DB nutzen
+-----------------
+
+Fuer die Nutzung der Calibre-Datenbank wird selbige einfach als $dbfile
+eingetragen. ABER AUFPASSEN: DAMIT KEINEN SCAN DURCHFUEHREN - SONST IST SIE
+DANACH HINUEBER!
+
+Stattdessen koennen Anpassungen des zweiten Blocks (Book Covers - ggf. im
+sprach-spezifischen Teil) vorgenommen werden, um Cover-Images mit einzubinden.
+$cover_mode ist hierzu auf 'calibre' zu setzen. Fuer die Aufbereitung der
+Cover-Images werden mittels des Skriptes scan_calibre_covers.php Symlinks
+angelegt: Dies setzt ein Linux/Unix System voraus. Unter Windows sollte dies
+(Vista, Server 2008 oder neuer vorausgesetzt) mit PHP v5.3 oder hoeher ebenfalls
+funktionieren.
