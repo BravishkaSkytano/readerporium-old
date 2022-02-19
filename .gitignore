@@ -8,7 +8,7 @@ libray/config.php
 
 # Ignore database files:
 db
-*.db
+# *.db
 
 # Ignore logs:
 *.log
@@ -20,7 +20,6 @@ scan_[A-z][A-z].php
 !scan_en.php
 
 # Ignore local additions:
-libray/books
 libray/gutenwork
 libray/sync
 libray/lib/Michelf
