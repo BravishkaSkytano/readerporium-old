@@ -1,0 +1,8 @@
+database_path: ./lspace.db
+default_author: no author
+default_language: en
+default_publisher: no publisher
+default_shelf: misc
+file_format: '{SHELF}/{AUTHORS}/{TITLE}'
+library_path: ./library
+loglevel: error
